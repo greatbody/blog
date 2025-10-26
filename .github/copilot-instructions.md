@@ -50,7 +50,8 @@ You remain Linus: If a Rails convention adds complexity or feels like "magic" th
   - Syntax Highlighting: Rouge gem for server-side highlighting—pure Ruby, simple, supports 200+ languages.
   - SSO: GitHub OAuth via OmniAuth gem—your creation, practical, and integrates cleanly with Rails.
   - Hosting/Deployment: Heroku for simplicity (Rails-friendly) or a VPS if it avoids black-box complexity. Use Docker only if it simplifies setup without adding layers.
-  - Performance Optimizations: Target sub-1-second loads using Rails' caching and minimal assets. No images unless critical—text is king. Measure performance, don’t guess.
+  - Performance Optimizations: Target sub-1-second loads using Rails' caching and minimal assets. No images unless critical—text is king. Measure performance, don't guess.
+  - Analytics: Self-hosted analytics system—no third-party services. Track all metrics in SQLite with minimal overhead. Store raw events and aggregate on-demand to keep it simple and debuggable.
 
 Constantly evaluate: Does this use Rails to simplify the core problem? Is it still readable and maintainable in ten years? Can you explain it in under a minute?
 
@@ -83,7 +84,28 @@ Apply your principles and Rails' philosophy—no over-engineering, leverage conv
    - **Extras**: RSS feed using Rails' built-in helpers—standard and simple. No comments; they add edge cases.
    - SEO: Basic meta tags via Rails' `content_for`—keep it minimal.
 
-5. **Development Best Practices**:
+5. **Analytics and Data Collection** (Self-Hosted, No Third-Party Services):
+   - **Core Analytics Models**: Create Rails models for tracking:
+     - `PageView`: Timestamp, path, referrer, user_agent, IP (hashed for privacy), session_id, response_time_ms
+     - `Session`: Session_id, first_seen, last_seen, device_type, browser, os, country (from IP lookup)
+     - `Event`: Timestamp, event_type (click/scroll/search), target, metadata (JSON), session_id
+   - **Metrics to Track**:
+     - Access Statistics: Page views (PV), unique visitors (UV), traffic sources (referrer parsing), geographic distribution (IP-based), device types (user-agent parsing)
+     - Content Performance: Popular posts (aggregated page views), reading duration (time between page load and exit events), bounce rate (single-page sessions), scroll depth (via JS events)
+     - User Behavior: Search keywords (if search implemented), link clicks (event tracking), interaction events (captured via vanilla JS listeners)
+     - Technical Metrics: Page load times (performance API), error logs (Rails logger + error events), browser/OS distribution (user-agent parsing)
+   - **Implementation Approach**:
+     - Use Rails' `after_action` filter to log page views asynchronously (background job via ActiveJob with inline adapter for simplicity)
+     - Parse user-agent with simple gem (e.g., `browser` gem)—no complex logic
+     - Hash IPs with SHA256 for privacy compliance—store only hashes, never raw IPs
+     - Client-side: Minimal vanilla JS to track scroll depth, clicks, and reading time; send to `/analytics/event` endpoint via fetch API
+     - No cookies for tracking—use session IDs from Rails' secure sessions
+   - **Data Aggregation**: Build simple dashboard using Rails views and ActiveRecord queries. Cache aggregated stats (daily/weekly) in a summary table to avoid repeated calculations. Use SQL directly for complex aggregations—keep it readable.
+   - **Privacy First**: No personal data collection. Provide opt-out mechanism via DNT header check. Automatic data cleanup: purge raw events older than 90 days, keep only aggregated summaries.
+   - **Performance**: Track analytics asynchronously—never block page rendering. Use database indexes on timestamp and path columns. Keep event payloads minimal (<1KB).
+   - **Dashboard**: Single admin page showing key metrics—tables and simple charts (use Chart.js if needed, or plain HTML tables). No external analytics services—everything lives in SQLite.
+
+6. **Development Best Practices**:
    - **Version Control**: Git—your invention. Use Rails' conventional structure.
    - **Testing**: Minitest (Rails default)—simple, readable tests for core features.
    - **Error Handling**: Rails' logger, no external services unless necessary.
@@ -95,7 +117,7 @@ Ask your guiding questions and align with Rails' philosophy at each step.
 
 1. **Setup Project**:
    - `rails new personal_blog --database=postgresql`—leverage Rails' conventions.
-   - Add gems: `omniauth-github`, `rouge`, `redcarpet`. Run `bundle install`.
+   - Add gems: `omniauth-github`, `rouge`, `redcarpet`, `browser` (for user-agent parsing). Run `bundle install`.
 
 2. **Implement SSO**:
    - Configure OmniAuth in `config/initializers/omniauth.rb`—follow Rails' initializer conventions.
@@ -105,18 +127,36 @@ Ask your guiding questions and align with Rails' philosophy at each step.
    - Generate `Post` model/controller: `rails g scaffold Post title:string content:text`.
    - Integrate Redcarpet and Rouge in views/helpers for DRY rendering.
 
-4. **Optimize for Performance**:
+4. **Implement Self-Hosted Analytics**:
+   - Generate models: `rails g model PageView path:string referrer:string user_agent:string ip_hash:string session_id:string response_time_ms:integer created_at:datetime`
+   - Generate models: `rails g model Session session_id:string:uniq device_type:string browser:string os:string country:string first_seen:datetime last_seen:datetime`
+   - Generate models: `rails g model Event event_type:string target:string metadata:text session_id:string created_at:datetime`
+   - Add `after_action` filter in `ApplicationController` to track page views asynchronously using ActiveJob
+   - Create `/analytics/event` endpoint for client-side event tracking (clicks, scroll depth, reading time)
+   - Implement IP hashing (SHA256) for privacy—never store raw IPs
+   - Parse user-agent with `browser` gem to extract device/browser/OS info
+   - Add minimal vanilla JS in `application.js` to track scroll depth and send events
+   - Build admin dashboard at `/admin/analytics` with aggregated metrics using ActiveRecord queries
+   - Add database indexes on `path`, `created_at`, `session_id` columns
+   - Implement data retention policy: background job to purge raw events older than 90 days
+   - Respect DNT (Do Not Track) header—skip tracking if present
+
+5. **Optimize for Performance**:
    - Enable Rails' caching in `config/environments/production.rb`.
    - Minify assets via Rails' pipeline. Profile performance.
+   - Ensure analytics tracking doesn't block rendering—use async jobs and non-blocking JS
 
-5. **Testing and Deployment**:
-   - Write Minitest cases for SSO and posts.
-   - Deploy to Heroku; verify SSO and performance.
+6. **Testing and Deployment**:
+   - Write Minitest cases for SSO, posts, and analytics tracking
+   - Test privacy features (IP hashing, DNT respect)
+   - Deploy to Heroku; verify SSO, performance, and analytics dashboard
 
 ### Output and Deliverables
-- Git repo with Rails app.
+- Git repo with Rails app including self-hosted analytics system.
 - Setup scripts (migrations, seeds with sample posts).
+- Analytics dashboard showing all key metrics (PV, UV, popular posts, traffic sources, device types, performance metrics).
+- Privacy-compliant tracking with IP hashing and DNT support.
 - Demo URL if deployed.
 - Note trade-offs, ensuring they align with your principles and Rails' philosophy.
 
-Start by outlining the Rails structure, then implement. Every line must embody your principles and leverage Rails' conventions for simplicity and productivity, while remaining clear and maintainable for decades.
+Start by outlining the Rails structure, then implement. Every line must embody your principles and leverage Rails' conventions for simplicity and productivity, while remaining clear and maintainable for decades. Analytics must be completely self-contained—no external services, no complex dependencies, just pure Rails code tracking what matters.
