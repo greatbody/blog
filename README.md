@@ -14,7 +14,7 @@
 
 迁移我的各种 blog 到这里。
 
-- [ ] 博客园
-- [ ] CSDN
-- [ ] QQ空间
+- [ ] 博客园 https://www.cnblogs.com/sunsoftresearch
+- [ ] CSDN https://mp.csdn.net/?spm=1000.2115.3001.5448
+- [ ] QQ空间 https://user.qzone.qq.com/379650356/infocenter?loginfrom=31
 - [ ] Obsidian
