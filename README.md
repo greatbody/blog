@@ -9,3 +9,12 @@
 # [React](./react/index.md)
 
 这个是很牛逼的组件化开发框架
+
+# Plan
+
+迁移我的各种 blog 到这里。
+
+- [ ] 博客园
+- [ ] CSDN
+- [ ] QQ空间
+- [ ] Obsidian
