@@ -43,4 +43,21 @@ module ApplicationHelper
     markdown_renderer = Redcarpet::Markdown.new(renderer, options)
     markdown_renderer.render(text).html_safe
   end
+
+  # Alias for markdown method for consistency
+  def render_markdown(text)
+    markdown(text)
+  end
+
+  def calculate_reading_time(content)
+    return 0 if content.blank?
+    
+    # Average reading speed: 200 words per minute
+    words_per_minute = 200
+    word_count = content.split.size
+    reading_time = (word_count.to_f / words_per_minute).ceil
+    
+    # Minimum reading time of 1 minute
+    [reading_time, 1].max
+  end
 end

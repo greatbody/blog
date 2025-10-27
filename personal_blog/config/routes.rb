@@ -22,6 +22,16 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#failure'
   get '/logout', to: 'sessions#destroy'
 
-  # Posts routes
-  resources :posts
+  # Public posts routes
+  get '/posts', to: 'posts#blog_index', as: :posts
+  get '/posts/:id', to: 'posts#show', as: :post
+  
+  # Admin posts routes
+  get '/admin/posts', to: 'posts#admin_index', as: :admin_posts
+  get '/posts/new', to: 'posts#new', as: :new_post
+  post '/posts', to: 'posts#create', as: :create_post
+  get '/posts/:id/edit', to: 'posts#edit', as: :edit_post
+  patch '/posts/:id', to: 'posts#update'
+  put '/posts/:id', to: 'posts#update'
+  delete '/posts/:id', to: 'posts#destroy', as: :delete_post
 end
