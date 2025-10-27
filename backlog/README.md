@@ -7,6 +7,19 @@ A secure, performant personal blog for technical articles built with Ruby on Rai
 
 ## Epics
 
+### [EPIC-0: UI Design & Style System](./epic-0-style/README.md)
+Modern, light, and professional design system for the personal tech blog
+
+**Stories:** 5 | **Story Points:** 28
+
+- [Story 0.1: Design System Foundation](./epic-0-style/story-0.1-design-system.md) (5 pts)
+- [Story 0.2: Typography System](./epic-0-style/story-0.2-typography.md) (5 pts)
+- [Story 0.3: Component Library](./epic-0-style/story-0.3-components.md) (8 pts)
+- [Story 0.4: Responsive Layout System](./epic-0-style/story-0.4-responsive-layout.md) (5 pts)
+- [Story 0.5: Code Block Styling](./epic-0-style/story-0.5-code-blocks.md) (5 pts)
+
+---
+
 ### [EPIC-1: Authentication & Security](./epic-1-authentication/README.md)
 GitHub OAuth-based Single Sign-On to protect blog access
 
@@ -85,10 +98,10 @@ Post-MVP features and improvements
 
 ## Summary
 
-**Total Story Points:** 134 (MVP) + 36 (Future)
+**Total Story Points:** 162 (MVP) + 36 (Future)
 
 ### By Priority:
-- **P0 (Must Have):** 44 points
+- **P0 (Must Have):** 72 points
 - **P1 (Should Have):** 61 points
 - **P2 (Nice to Have):** 29 points
 - **P3 (Future):** 36 points
@@ -96,6 +109,13 @@ Post-MVP features and improvements
 ---
 
 ## Sprint Planning
+
+### Sprint 0 (Design Foundation) - 28 points
+- Epic 0: UI Design & Style System (all stories)
+  - Foundation and visual language
+  - Typography and components
+  - Responsive layouts
+  - Code block styling
 
 ### Sprint 1 (MVP Foundation) - 19 points
 - Story 5.1: Project Setup (3)
