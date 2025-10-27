@@ -13,49 +13,49 @@
 ## Acceptance Criteria
 
 ### 1. Posts Controller
-- [ ] Generated via Rails scaffold: `rails g scaffold Post title:string content:text`
-- [ ] All CRUD actions: index, show, new, create, edit, update, destroy
-- [ ] `before_action :authenticate_user!` protects all actions
-- [ ] Strong parameters permit only title and content
+- [x] Generated via Rails scaffold: `rails g scaffold Post title:string content:text`
+- [x] All CRUD actions: index, show, new, create, edit, update, destroy
+- [x] `before_action :authenticate_user!` protects all actions
+- [x] Strong parameters permit only title and content
 
 ### 2. Index Page (Admin View)
-- [ ] URL: `/posts`
-- [ ] Lists all posts (published and drafts) in table format
-- [ ] Columns: Title, Status (Published/Draft), Published Date, Actions
-- [ ] Shows "New Post" button
-- [ ] Shows Edit and Delete links for each post
-- [ ] Posts sorted by created_at descending
+- [x] URL: `/posts`
+- [x] Lists all posts (published and drafts) in table format
+- [x] Columns: Title, Status (Published/Draft), Published Date, Actions
+- [x] Shows "New Post" button
+- [x] Shows Edit and Delete links for each post
+- [x] Posts sorted by created_at descending
 
 ### 3. Show Page (Post View)
-- [ ] URL: `/posts/:slug` (uses slug, not ID)
-- [ ] Displays post title as H1
-- [ ] Displays formatted published date
-- [ ] Renders Markdown content (raw, no syntax highlighting yet)
-- [ ] Shows "Edit" and "Back to Posts" links
-- [ ] 404 error if slug not found
+- [x] URL: `/posts/:slug` (uses slug, not ID)
+- [x] Displays post title as H1
+- [x] Displays formatted published date
+- [x] Renders Markdown content (with syntax highlighting)
+- [x] Shows "Edit" and "Back to Posts" links
+- [x] 404 error if slug not found
 
 ### 4. New/Edit Forms
-- [ ] URL: `/posts/new` and `/posts/:slug/edit`
-- [ ] Form fields: Title (text input), Content (textarea)
-- [ ] Checkbox for "Publish"
-- [ ] Submit button saves post
-- [ ] Cancel button returns to index
-- [ ] Validation errors displayed inline
-- [ ] Flash messages for success/error
+- [x] URL: `/posts/new` and `/posts/:slug/edit`
+- [x] Form fields: Title (text input), Content (textarea)
+- [x] Checkbox for "Publish"
+- [x] Submit button saves post
+- [x] Cancel button returns to index
+- [x] Validation errors displayed inline
+- [x] Flash messages for success/error
 
 ### 5. Create/Update Actions
-- [ ] POST `/posts` creates new post
-- [ ] PATCH `/posts/:slug` updates existing post
-- [ ] Slug auto-generated on create from title
-- [ ] If "Publish" checked, calls `post.publish!`
-- [ ] Redirects to post show page on success
-- [ ] Re-renders form with errors on failure
+- [x] POST `/posts` creates new post
+- [x] PATCH `/posts/:slug` updates existing post
+- [x] Slug auto-generated on create from title
+- [x] If "Publish" checked, calls `post.publish!`
+- [x] Redirects to post show page on success
+- [x] Re-renders form with errors on failure
 
 ### 6. Delete Action
-- [ ] DELETE `/posts/:slug` destroys post
-- [ ] Confirmation dialog: "Are you sure?"
-- [ ] Redirects to index with success message
-- [ ] Soft delete not required (hard delete OK)
+- [x] DELETE `/posts/:slug` destroys post
+- [x] Confirmation dialog: "Are you sure?"
+- [x] Redirects to index with success message
+- [x] Soft delete not required (hard delete OK)
 
 ## Routes
 

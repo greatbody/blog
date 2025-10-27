@@ -8,16 +8,16 @@ module ApplicationHelper
       "<pre class=\"highlight\"><code class=\"language-#{language}\">#{formatted_code}</code></pre>"
     end
   end
-  
+
   def markdown(text)
     return "" if text.blank?
-    
+
     renderer = HTMLWithRouge.new(
       filter_html: false,
       hard_wrap: true,
       link_attributes: { target: '_blank', rel: 'noopener' }
     )
-    
+
     options = {
       autolink: true,
       no_intra_emphasis: true,
@@ -28,7 +28,7 @@ module ApplicationHelper
       tables: true,
       footnotes: true
     }
-    
+
     markdown_renderer = Redcarpet::Markdown.new(renderer, options)
     markdown_renderer.render(text).html_safe
   end

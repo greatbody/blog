@@ -13,13 +13,13 @@
 ## Acceptance Criteria
 
 ### 1. OAuth Provider Setup
-- [ ] OmniAuth gem installed and configured in `config/initializers/omniauth.rb`
-- [ ] GitHub OAuth application created with client ID and secret
-- [ ] Callback URL configured as `/auth/github/callback`
-- [ ] Environment variables set for `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`
+- [x] OmniAuth gem installed and configured in `config/initializers/omniauth.rb`
+- [x] GitHub OAuth application created with client ID and secret
+- [x] Callback URL configured as `/auth/github/callback`
+- [x] Environment variables set for `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`
 
 ### 2. User Model
-- [ ] `User` model created with fields:
+- [x] `User` model created with fields:
   - `provider` (string)
   - `uid` (string)
   - `name` (string)
@@ -27,31 +27,31 @@
   - `avatar_url` (string)
   - `created_at` (datetime)
   - `updated_at` (datetime)
-- [ ] Database migration executed successfully
-- [ ] No sensitive OAuth tokens stored in database
+- [x] Database migration executed successfully
+- [x] No sensitive OAuth tokens stored in database
 
 ### 3. Authentication Flow
-- [ ] Route `/auth/github` initiates OAuth flow
-- [ ] Callback route `/auth/github/callback` processes OAuth response
-- [ ] `SessionsController` handles OAuth callback and creates session
-- [ ] User record created or updated on successful authentication
-- [ ] Session stored using Rails' secure encrypted session cookies
+- [x] Route `/auth/github` initiates OAuth flow
+- [x] Callback route `/auth/github/callback` processes OAuth response
+- [x] `SessionsController` handles OAuth callback and creates session
+- [x] User record created or updated on successful authentication
+- [x] Session stored using Rails' secure encrypted session cookies
 
 ### 4. Authorization Guards
-- [ ] `ApplicationController` implements `authenticate_user!` method
-- [ ] `before_action :authenticate_user!` applied to all controllers requiring authentication
-- [ ] Unauthenticated requests redirect to `/auth/github`
-- [ ] Current user accessible via `current_user` helper method
+- [x] `ApplicationController` implements `authenticate_user!` method
+- [x] `before_action :authenticate_user!` applied to all controllers requiring authentication
+- [x] Unauthenticated requests redirect to `/auth/github`
+- [x] Current user accessible via `current_user` helper method
 
 ### 5. Logout Functionality
-- [ ] `/logout` route destroys session
-- [ ] User redirected to login page after logout
-- [ ] Session cleared completely
+- [x] `/logout` route destroys session
+- [x] User redirected to login page after logout
+- [x] Session cleared completely
 
 ### 6. Error Handling
-- [ ] OAuth failures display clear error message
-- [ ] Invalid OAuth state handled gracefully
-- [ ] Network errors during OAuth flow handled without crashes
+- [x] OAuth failures display clear error message
+- [x] Invalid OAuth state handled gracefully
+- [x] Network errors during OAuth flow handled without crashes
 
 ## Technical Notes
 

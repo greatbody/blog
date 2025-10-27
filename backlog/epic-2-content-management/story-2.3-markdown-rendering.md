@@ -13,43 +13,43 @@
 ## Acceptance Criteria
 
 ### 1. Gem Integration
-- [ ] `redcarpet` gem added to Gemfile
-- [ ] `rouge` gem added to Gemfile (for syntax highlighting)
-- [ ] Bundle installed
+- [x] `redcarpet` gem added to Gemfile
+- [x] `rouge` gem added to Gemfile (for syntax highlighting)
+- [x] Bundle installed
 
 ### 2. Markdown Helper
-- [ ] Helper method `markdown(text)` in `ApplicationHelper`
-- [ ] Uses Redcarpet renderer with options:
+- [x] Helper method `markdown(text)` in `ApplicationHelper`
+- [x] Uses Redcarpet renderer with options:
   - `autolink: true`
   - `tables: true`
   - `fenced_code_blocks: true`
   - `strikethrough: true`
   - `no_intra_emphasis: true`
   - `hard_wrap: true`
-- [ ] Returns HTML-safe string
+- [x] Returns HTML-safe string
 
 ### 3. Post Rendering
-- [ ] `posts/show.html.erb` uses `markdown(post.content)` to render content
-- [ ] Markdown converted to semantic HTML
-- [ ] Links are clickable
-- [ ] Tables render properly
-- [ ] Inline code uses `<code>` tags
-- [ ] Block code uses `<pre><code>` tags
+- [x] `posts/show.html.erb` uses `markdown(post.content)` to render content
+- [x] Markdown converted to semantic HTML
+- [x] Links are clickable
+- [x] Tables render properly
+- [x] Inline code uses `<code>` tags
+- [x] Block code uses `<pre><code>` tags
 
 ### 4. Supported Markdown Features
-- [ ] Headers (H1-H6)
-- [ ] Bold, italic, strikethrough
-- [ ] Unordered and ordered lists
-- [ ] Links and images
-- [ ] Blockquotes
-- [ ] Inline code and code blocks
-- [ ] Tables
-- [ ] Horizontal rules
+- [x] Headers (H1-H6)
+- [x] Bold, italic, strikethrough
+- [x] Unordered and ordered lists
+- [x] Links and images
+- [x] Blockquotes
+- [x] Inline code and code blocks
+- [x] Tables
+- [x] Horizontal rules
 
 ### 5. HTML Sanitization
-- [ ] Raw HTML in Markdown is escaped for security
-- [ ] Only safe tags allowed (no `<script>`, `<iframe>`, etc.)
-- [ ] Use Rails' `sanitize` helper if needed
+- [x] Raw HTML in Markdown is escaped for security
+- [x] Only safe tags allowed (no `<script>`, `<iframe>`, etc.)
+- [x] Use Rails' `sanitize` helper if needed
 
 ## Example
 

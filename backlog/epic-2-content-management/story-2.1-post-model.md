@@ -13,32 +13,32 @@
 ## Acceptance Criteria
 
 ### 1. Post Model Fields
-- [ ] `title`: string, required, max 255 characters
-- [ ] `content`: text, required (stores Markdown)
-- [ ] `slug`: string, unique, indexed, auto-generated from title
-- [ ] `published`: boolean, default false
-- [ ] `published_at`: datetime, nullable
-- [ ] `created_at`, `updated_at`: timestamps
+- [x] `title`: string, required, max 255 characters
+- [x] `content`: text, required (stores Markdown)
+- [x] `slug`: string, unique, indexed, auto-generated from title
+- [x] `published`: boolean, default false
+- [x] `published_at`: datetime, nullable
+- [x] `created_at`, `updated_at`: timestamps
 
 ### 2. Validations
-- [ ] Title presence validated
-- [ ] Title length <= 255 characters
-- [ ] Content presence validated
-- [ ] Slug uniqueness validated
-- [ ] Slug automatically generated from title using parameterize
+- [x] Title presence validated
+- [x] Title length <= 255 characters
+- [x] Content presence validated
+- [x] Slug uniqueness validated
+- [x] Slug automatically generated from title using parameterize
 
 ### 3. Model Methods
-- [ ] `published` scope returns only published posts
-- [ ] `draft` scope returns unpublished posts
-- [ ] `publish!` method sets published=true and published_at=now
-- [ ] `unpublish!` method sets published=false
+- [x] `published` scope returns only published posts
+- [x] `draft` scope returns unpublished posts
+- [x] `publish!` method sets published=true and published_at=now
+- [x] `unpublish!` method sets published=false
 
 ### 4. Database
-- [ ] SQLite database configured in development and production
-- [ ] Migration creates posts table with all fields
-- [ ] Index on slug column
-- [ ] Index on published_at column
-- [ ] No foreign key constraints (application-level integrity only)
+- [x] SQLite database configured in development and production
+- [x] Migration creates posts table with all fields
+- [x] Index on slug column
+- [x] Index on published_at column
+- [x] No foreign key constraints (application-level integrity only)
 
 ## Technical Notes
 

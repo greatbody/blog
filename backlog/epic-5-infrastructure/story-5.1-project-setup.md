@@ -10,15 +10,15 @@
 **So that** development can begin efficiently
 
 ## Acceptance Criteria
-- [ ] Rails app created: `rails new personal_blog --database=sqlite3`
-- [ ] Ruby 3.0+ specified in Gemfile and .ruby-version
-- [ ] Rails 7.0+ specified in Gemfile
-- [ ] Required gems added: omniauth-github, rouge, redcarpet, browser, kaminari
-- [ ] Development gems: bullet, rack-mini-profiler
-- [ ] Test gems: minitest, capybara
-- [ ] Git repository initialized with proper .gitignore
-- [ ] Rails credentials configured for secrets
-- [ ] README documented with setup instructions
+- [x] Rails app created: `rails new personal_blog --database=sqlite3`
+- [x] Ruby 3.0+ specified in Gemfile and .ruby-version
+- [x] Rails 7.0+ specified in Gemfile
+- [x] Required gems added: omniauth-github, rouge, redcarpet, browser, kaminari
+- [x] Development gems: bullet, rack-mini-profiler
+- [x] Test gems: minitest, capybara
+- [x] Git repository initialized with proper .gitignore
+- [x] Rails credentials configured for secrets
+- [x] README documented with setup instructions
 
 ## Definition of Done
 - [ ] All acceptance criteria met
