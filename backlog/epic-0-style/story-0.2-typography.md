@@ -1,8 +1,8 @@
 # Story 0.2: Typography System
 
 ## Story
-**As a** reader  
-**I want** beautiful, highly readable typography  
+**As a** reader
+**I want** beautiful, highly readable typography
 **So that** I can comfortably read long-form technical articles
 
 ## Priority: P0 (Must Have)

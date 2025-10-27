@@ -1,8 +1,8 @@
 # Story 0.1: Design System Foundation
 
 ## Story
-**As a** developer  
-**I want** a documented design system with CSS custom properties and base styles  
+**As a** developer
+**I want** a documented design system with CSS custom properties and base styles
 **So that** I have a consistent foundation for all UI components
 
 ## Priority: P0 (Must Have)
@@ -53,7 +53,7 @@ app/assets/stylesheets/
   --color-accent-hover: #2563EB;
   --color-border: #E5E7EB;
   --color-code-bg: #F3F4F6;
-  
+
   /* Spacing */
   --space-xs: 4px;
   --space-sm: 8px;
@@ -62,7 +62,7 @@ app/assets/stylesheets/
   --space-xl: 32px;
   --space-2xl: 48px;
   --space-3xl: 64px;
-  
+
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Monaco, Consolas, monospace;
@@ -76,19 +76,19 @@ app/assets/stylesheets/
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.7;
-  
+
   /* Layout */
   --max-width-content: 720px;
   --max-width-wide: 1200px;
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;

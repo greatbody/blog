@@ -1,8 +1,8 @@
 # Story 0.4: Responsive Layout System
 
 ## Story
-**As a** user  
-**I want** the blog to work beautifully on any device  
+**As a** user
+**I want** the blog to work beautifully on any device
 **So that** I can read comfortably whether on mobile, tablet, or desktop
 
 ## Priority: P0 (Must Have)
@@ -99,7 +99,7 @@ Implement a mobile-first responsive layout system that ensures the blog works se
   .grid-cols-2-md {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .grid-cols-3-md {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -150,7 +150,7 @@ Implement a mobile-first responsive layout system that ensures the blog works se
   .navbar-nav {
     display: flex;
   }
-  
+
   .navbar-toggle {
     display: none;
   }
@@ -224,20 +224,20 @@ table {
   .table-responsive thead {
     display: none;
   }
-  
+
   .table-responsive tr {
     display: block;
     margin-bottom: var(--space-lg);
     border: 1px solid var(--color-border);
   }
-  
+
   .table-responsive td {
     display: block;
     text-align: right;
     padding: var(--space-sm);
     border-bottom: 1px solid var(--color-border);
   }
-  
+
   .table-responsive td::before {
     content: attr(data-label);
     float: left;

@@ -1,0 +1,25 @@
+/* App CSS Manifest: loads the design system and components in order */
+
+/* Foundation */
+@import "design_system/reset.css";
+@import "design_system/tokens.css";
+@import "design_system/base.css";
+@import "design_system/typography.css";
+@import "design_system/utilities.css";
+@import "design_system/layout.css";
+
+/* Components */
+@import "components/buttons.css";
+@import "components/forms.css";
+@import "components/navigation.css";
+@import "components/cards.css";
+@import "components/alerts.css";
+@import "components/loading.css";
+@import "components/empty_states.css";
+@import "components/footer.css";
+@import "components/badges.css";
+
+/* Syntax highlighting (load theme first) */
+@import "rouge.css";
+/* Our overrides */
+@import "design_system/code.css";

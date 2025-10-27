@@ -1,8 +1,8 @@
 # Story 0.3: Component Library
 
 ## Story
-**As a** developer  
-**I want** a library of reusable, styled components  
+**As a** developer
+**I want** a library of reusable, styled components
 **So that** I can build consistent UI quickly across the application
 
 ## Priority: P0 (Must Have)
@@ -32,8 +32,8 @@ Create a comprehensive library of reusable UI components following the establish
 ## Component Specifications
 
 ### 1. Button Component
-**Variants**: Primary, Secondary, Ghost, Danger  
-**Sizes**: Small, Medium, Large  
+**Variants**: Primary, Secondary, Ghost, Danger
+**Sizes**: Small, Medium, Large
 **States**: Default, Hover, Focus, Active, Disabled, Loading
 
 ```css
@@ -80,7 +80,7 @@ Create a comprehensive library of reusable UI components following the establish
 ```
 
 ### 2. Form Inputs
-**Types**: Text, Email, Password, Textarea, Select  
+**Types**: Text, Email, Password, Textarea, Select
 **States**: Default, Focus, Error, Disabled
 
 ```css
@@ -117,7 +117,7 @@ Create a comprehensive library of reusable UI components following the establish
 ```
 
 ### 3. Navigation Bar
-**Requirements**: Fixed position, minimal height, responsive collapse  
+**Requirements**: Fixed position, minimal height, responsive collapse
 **Contents**: Logo/title, nav links, user actions
 
 ```css
@@ -164,7 +164,7 @@ Create a comprehensive library of reusable UI components following the establish
 ```
 
 ### 4. Article Card
-**Use**: Blog post list items on homepage  
+**Use**: Blog post list items on homepage
 **Contents**: Title, excerpt, date, metadata
 
 ```css
@@ -207,7 +207,7 @@ Create a comprehensive library of reusable UI components following the establish
 ```
 
 ### 5. Alert Component
-**Variants**: Success, Warning, Error, Info  
+**Variants**: Success, Warning, Error, Info
 **Features**: Dismissible, icon support
 
 ```css
@@ -254,7 +254,7 @@ Create a comprehensive library of reusable UI components following the establish
 ```
 
 ### 7. Empty State
-**Use**: When no content/data to display  
+**Use**: When no content/data to display
 **Contents**: Icon, message, optional action
 
 ```css

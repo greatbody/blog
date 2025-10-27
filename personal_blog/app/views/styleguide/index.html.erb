@@ -1,0 +1,100 @@
+<div class="navbar">
+  <div class="navbar-container">
+    <a href="#" class="navbar-brand">Greatbody</a>
+    <div class="navbar-menu">
+      <ul class="navbar-nav">
+        <li><a class="navbar-link" href="#buttons">Buttons</a></li>
+        <li><a class="navbar-link" href="#forms">Forms</a></li>
+        <li><a class="navbar-link" href="#cards">Cards</a></li>
+        <li><a class="navbar-link" href="#alerts">Alerts</a></li>
+        <li><a class="navbar-link" href="#code">Code</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<main class="container container-narrow section prose">
+  <h1>Style Guide</h1>
+  <p>Preview of the modern, light, and professional UI for the personal tech blog.</p>
+
+  <hr>
+
+  <section id="buttons">
+    <h2>Buttons</h2>
+    <div class="stack">
+      <div class="stack">
+        <a href="#" class="btn btn-primary">Primary Button</a>
+        <a href="#" class="btn btn-secondary">Secondary Button</a>
+        <a href="#" class="btn btn-ghost">Ghost Button</a>
+        <a href="#" class="btn btn-danger">Danger Button</a>
+      </div>
+      <div class="stack">
+        <a href="#" class="btn btn-sm btn-primary">Small</a>
+        <a href="#" class="btn btn-primary">Medium</a>
+        <a href="#" class="btn btn-lg btn-primary">Large</a>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="forms">
+    <h2>Forms</h2>
+    <div class="form-group">
+      <label class="label" for="email">Email</label>
+      <input class="input" id="email" type="email" placeholder="you@example.com">
+      <div class="help-text">We'll never share your email.</div>
+    </div>
+    <div class="form-group">
+      <label class="label" for="message">Message</label>
+      <textarea class="textarea" id="message" rows="4" placeholder="Write something..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="label" for="select">Select</label>
+      <select class="select" id="select">
+        <option>Option A</option>
+        <option>Option B</option>
+      </select>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="cards">
+    <h2>Article Card</h2>
+    <article class="article-card">
+      <h3 class="article-card-title"><a href="#">Optimizing Rails Queries for Performance</a></h3>
+      <div class="article-card-meta">Oct 27, 2025 · 6 min read · Ruby on Rails</div>
+      <p class="article-card-excerpt">Learn practical techniques to reduce N+1 queries, leverage counter caches, and add proper indexes to make your Rails app fly.</p>
+      <a href="#" class="btn btn-secondary">Read More</a>
+    </article>
+  </section>
+
+  <hr>
+
+  <section id="alerts">
+    <h2>Alerts</h2>
+    <div class="alert alert-success">This is a success alert — great job!</div>
+    <div class="alert alert-warning">This is a warning alert — pay attention.</div>
+    <div class="alert alert-error">This is an error alert — something went wrong.</div>
+    <div class="alert alert-info">This is an info alert — take note.</div>
+  </section>
+
+  <hr>
+
+  <section id="code">
+    <h2>Code Block</h2>
+    <div class="code-block" data-controller="code-copy">
+      <div class="code-block-header">
+        <span class="code-block-language">Ruby</span>
+        <button class="code-block-copy" data-code-copy-target="button" data-action="click->code-copy#copy">Copy</button>
+      </div>
+      <pre><code data-code-copy-target="source" class="highlight ruby">class User &lt; ApplicationRecord
+  has_secure_password
+  validates :email, presence: true, uniqueness: true
+end</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">© <%= Time.current.year %> Greatbody — Built with Rails</footer>
+</main>
