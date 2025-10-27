@@ -24,8 +24,7 @@ Rails.application.routes.draw do
 
   # Public posts routes
   get '/posts', to: 'posts#blog_index', as: :posts
-  get '/posts/:id', to: 'posts#show', as: :post
-  
+
   # Admin posts routes
   get '/admin/posts', to: 'posts#admin_index', as: :admin_posts
   get '/posts/new', to: 'posts#new', as: :new_post
@@ -34,4 +33,7 @@ Rails.application.routes.draw do
   patch '/posts/:id', to: 'posts#update'
   put '/posts/:id', to: 'posts#update'
   delete '/posts/:id', to: 'posts#destroy', as: :delete_post
+
+  # Individual post route (must come after specific routes)
+  get '/posts/:id', to: 'posts#show', as: :post
 end
