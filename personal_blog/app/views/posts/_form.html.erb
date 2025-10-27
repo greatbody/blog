@@ -1,8 +1,8 @@
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
-    <div class="alert alert-danger">
-      <h4><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h4>
-      <ul>
+    <div class="alert alert-error">
+      <strong><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</strong>
+      <ul class="mt-sm">
         <% post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -10,23 +10,26 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
-    <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, class: "form-control", required: true %>
+  <div class="form-group">
+    <%= form.label :title, class: "label" %>
+    <%= form.text_field :title, class: "input", placeholder: "Post title...", required: true %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label :content, class: "form-label" %>
-    <%= form.text_area :content, rows: 20, class: "form-control", required: true %>
+  <div class="form-group">
+    <%= form.label :content, class: "label" %>
+    <%= form.text_area :content, rows: 20, class: "textarea", placeholder: "Write your post content in Markdown...", required: true %>
+    <div class="help-text">Supports Markdown formatting and syntax highlighting.</div>
   </div>
 
-  <div class="mb-3 form-check">
-    <%= form.check_box :publish, class: "form-check-input" %>
-    <%= form.label :publish, "Publish this post", class: "form-check-label" %>
+  <div class="form-group">
+    <label class="flex items-center gap-sm cursor-pointer">
+      <%= form.check_box :publish, class: "cursor-pointer" %>
+      <span class="label m-0">Publish this post</span>
+    </label>
   </div>
 
-  <div class="mb-3">
+  <div class="flex gap-sm">
     <%= form.submit class: "btn btn-primary" %>
-    <%= link_to "Cancel", posts_path, class: "btn btn-outline-secondary" %>
+    <%= link_to "Cancel", posts_path, class: "btn btn-ghost" %>
   </div>
 <% end %>

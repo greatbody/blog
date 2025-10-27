@@ -24,6 +24,35 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <%= link_to "Greatbody", root_path, class: "navbar-brand" %>
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li><%= link_to "Posts", posts_path, class: "navbar-link" %></li>
+            <li><%= link_to "New Post", new_post_path, class: "navbar-link" %></li>
+            <% if Rails.env.development? %>
+              <li><%= link_to "Styleguide", styleguide_path, class: "navbar-link" %></li>
+            <% end %>
+            <li><%= link_to "Logout", logout_path, class: "navbar-link" %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container section">
+      <% if flash[:notice] %>
+        <div class="alert alert-success"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-error"><%= flash[:alert] %></div>
+      <% end %>
+      
+      <%= yield %>
+    </main>
+
+    <footer class="footer">
+      © <%= Time.current.year %> Greatbody — Built with Rails
+    </footer>
   </body>
 </html>

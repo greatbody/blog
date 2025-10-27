@@ -1,34 +1,37 @@
-<h1>Posts</h1>
+<div class="container-narrow">
+  <div class="flex justify-between items-center mb-xl">
+    <h1>Posts</h1>
+    <%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
+  </div>
 
-<%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
-
-<table class="table mt-3">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Status</th>
-      <th>Published Date</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-        <td>
-          <% if post.published %>
-            <span class="badge bg-success">Published</span>
-          <% else %>
-            <span class="badge bg-secondary">Draft</span>
-          <% end %>
-        </td>
-        <td><%= post.published_at&.strftime("%B %d, %Y") || "N/A" %></td>
-        <td>
-          <%= link_to "Edit", edit_post_path(post), class: "btn btn-sm btn-secondary" %>
-          <%= button_to "Delete", post_path(post), method: :delete, 
-                data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% if @posts.any? %>
+    <div class="stack-lg">
+      <% @posts.each do |post| %>
+        <article class="article-card">
+          <h2 class="article-card-title">
+            <%= link_to post.title, post %>
+          </h2>
+          <div class="article-card-meta">
+            <% if post.published %>
+              <span class="badge badge-accent">Published</span>
+              <%= post.published_at&.strftime("%B %d, %Y") %>
+            <% else %>
+              <span class="badge">Draft</span>
+            <% end %>
+          </div>
+          <div class="flex gap-sm mt-md">
+            <%= link_to "Edit", edit_post_path(post), class: "btn btn-sm btn-secondary" %>
+            <%= button_to "Delete", post_path(post), method: :delete, 
+                  data: { turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      <h2 class="empty-state-title">No posts yet</h2>
+      <p class="empty-state-message">Create your first post to get started.</p>
+      <%= link_to "Create Post", new_post_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
