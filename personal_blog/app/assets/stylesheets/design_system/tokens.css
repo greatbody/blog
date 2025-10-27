@@ -7,47 +7,47 @@
   /* ============================================
    * COLORS
    * ============================================ */
-  
+
   /* Background Colors */
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #F8F9FA;
   --color-bg-tertiary: #F3F4F6;
-  
+
   /* Text Colors */
   --color-text-primary: #1A1A1A;
   --color-text-secondary: #6B7280;
   --color-text-tertiary: #9CA3AF;
-  
+
   /* Accent Colors */
   --color-accent: #3B82F6;
   --color-accent-hover: #2563EB;
   --color-accent-light: #DBEAFE;
-  
+
   /* Border Colors */
   --color-border: #E5E7EB;
   --color-border-light: #F3F4F6;
-  
+
   /* Code Colors */
   --color-code-bg: #F3F4F6;
   --color-code-text: #1A1A1A;
-  
+
   /* Semantic Colors */
   --color-success: #10B981;
   --color-success-bg: #D1FAE5;
   --color-success-text: #065F46;
-  
+
   --color-warning: #F59E0B;
   --color-warning-bg: #FEF3C7;
   --color-warning-text: #92400E;
-  
+
   --color-error: #EF4444;
   --color-error-bg: #FEE2E2;
   --color-error-text: #991B1B;
-  
+
   --color-info: #3B82F6;
   --color-info-bg: #DBEAFE;
   --color-info-text: #1E40AF;
-  
+
   /* ============================================
    * SPACING
    * ============================================ */
@@ -59,15 +59,15 @@
   --space-2xl: 48px;
   --space-3xl: 64px;
   --space-4xl: 96px;
-  
+
   /* ============================================
    * TYPOGRAPHY
    * ============================================ */
-  
+
   /* Font Families */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-mono: ui-monospace, 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-  
+
   /* Font Sizes */
   --font-size-xs: 0.75rem;      /* 12px */
   --font-size-sm: 0.875rem;     /* 14px */
@@ -77,46 +77,46 @@
   --font-size-2xl: 2rem;        /* 32px */
   --font-size-3xl: 2.5rem;      /* 40px */
   --font-size-4xl: 3rem;        /* 48px */
-  
+
   /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
+
   /* Line Heights */
   --line-height-tight: 1.2;
   --line-height-snug: 1.375;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.7;
   --line-height-loose: 2;
-  
+
   /* Letter Spacing */
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.025em;
-  
+
   /* ============================================
-   * LAYOUT
-   * ============================================ */
-  --max-width-content: 720px;
+  * LAYOUT
+  * ============================================ */
+  --max-width-content: 800px;
   --max-width-wide: 1200px;
   --max-width-full: 100%;
-  
+
   --navbar-height: 64px;
-  
+
   /* ============================================
    * BORDERS
    * ============================================ */
   --border-width: 1px;
   --border-width-thick: 2px;
-  
+
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
   --border-radius-xl: 16px;
   --border-radius-full: 9999px;
-  
+
   /* ============================================
    * SHADOWS
    * ============================================ */
@@ -125,7 +125,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  
+
   /* ============================================
    * TRANSITIONS
    * ============================================ */
@@ -133,7 +133,7 @@
   --transition-base: 200ms ease;
   --transition-slow: 300ms ease;
   --transition-slower: 500ms ease;
-  
+
   /* ============================================
    * Z-INDEX SCALE
    * ============================================ */
@@ -149,7 +149,7 @@
 /* ============================================
  * RESPONSIVE BREAKPOINTS
  * ============================================ */
-/* 
+/*
  * Mobile First Approach:
  * - Base styles: 320px - 767px (mobile)
  * - sm: 640px+ (large mobile)

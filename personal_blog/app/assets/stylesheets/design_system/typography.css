@@ -83,9 +83,16 @@ blockquote p:last-child { margin-bottom: 0; }
 .prose {
   max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: var(--space-2xl) var(--space-lg);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (min-width: 768px) {
-  .prose { padding: 0 var(--space-2xl); }
+  .prose {
+    padding: var(--space-3xl) var(--space-2xl);
+    border-radius: var(--border-radius-xl);
+  }
 }
